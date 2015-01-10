@@ -183,6 +183,5 @@ BOOL controls_update(void)
 		}
 	}
 #endif
-
 	return(TRUE);
 }

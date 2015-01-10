@@ -3,6 +3,10 @@
 
 #include "supervision.h"
 
+#ifdef OPENEMU
+extern uint8 controls_state;
+#endif
+
 void controls_init();
 void controls_done();
 void controls_reset();

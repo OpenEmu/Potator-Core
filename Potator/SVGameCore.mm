@@ -35,7 +35,6 @@
 @interface SVGameCore () <OESVSystemResponderClient>
 {
     uint16_t *videoBuffer;
-    int16_t pad[OESVButtonCount];
     NSString *romName;
     double sampleRate;
 
@@ -48,7 +47,6 @@
 }
 
 @end
-
 
 #define SCREEN_HEIGHT 160
 #define SCREEN_WIDTH  160
@@ -77,14 +75,35 @@ static __weak SVGameCore *_current;
 }
 
 #pragma mark - Input
-- (oneway void)didPushSVButton:(OESVButton)button;
+- (oneway void)didPushSVButton:(OESVButton)button
 {
-    pad[button] = 1;
-}
+    switch(button)
+    {
+        case OESVButtonA:      controls_state|=0x10; break;
+        case OESVButtonB:      controls_state|=0x20; break;
+        case OESVButtonStart:  controls_state|=0x80; break;
+        case OESVButtonSelect: controls_state|=0x40; break;
+        case OESVButtonUp:     controls_state|=0x08; break;
+        case OESVButtonDown:   controls_state|=0x04; break;
+        case OESVButtonLeft:   controls_state|=0x02; break;
+        case OESVButtonRight:  controls_state|=0x01; break;
+        default:;
+    }}
 
-- (oneway void)didReleaseSVButton:(OESVButton)button;
+- (oneway void)didReleaseSVButton:(OESVButton)button
 {
-    pad[button] = 0;
+    switch(button)
+    {
+        case OESVButtonA:      controls_state^=0x10; break;
+        case OESVButtonB:      controls_state^=0x20; break;
+        case OESVButtonStart:  controls_state^=0x80; break;
+        case OESVButtonSelect: controls_state^=0x40; break;
+        case OESVButtonUp:     controls_state^=0x08; break;
+        case OESVButtonDown:   controls_state^=0x04; break;
+        case OESVButtonLeft:   controls_state^=0x02; break;
+        case OESVButtonRight:  controls_state^=0x01; break;
+        default:;
+    }
 }
 
 - (void)changeDisplayMode
@@ -137,56 +156,11 @@ static size_t audio_batch_callback(const int16_t *data, size_t frames)
 
 - (void)executeFrameSkippingFrame: (BOOL) skip
 {
-    static NSUInteger frameCount = 0;
-
-    supervision_update_input();
-    supervision_exec((int16*)videoBuffer,1);
-    controls_reset();
-
-
-
-
-    /*
-     if(frameCount > 500){
-     int x, y;
-     uint16_t *pSrc;
-
-     NSImage *image = [[NSImage alloc] initWithSize:NSMakeSize(160, 160)];
-     [image lockFocus];
-     pSrc = videoBuffer;
-     for ( y = 0; y < 160; y++ )
-     {
-     for ( x = 0; x < 160; x++ )
-     {
-     printf("%04x", *pSrc);
-     pSrc++;
-     continue;
-
-     uint8_t   red = ((*pSrc)&0x7C00)>>10;
-     uint8_t green = ((*pSrc)&0x03E0)>>5;
-     uint8_t  blue = (*pSrc)&0x001F;
-     //                printf("%02x %02x %02x\n", red, green, blue);
-     NSColor *c = [NSColor colorWithDeviceRed:red/(float)0x1F green:green/(float)0x1F blue:blue/(float)0x1F alpha:1.0];
-     [c setFill];
-     NSRectFill(NSMakeRect(x, y, 1, 1));
-
-     pSrc++;
-     }
-     }
-     [image unlockFocus];
-
-     NSString *file = [[NSString stringWithFormat:@"~/Desktop/Frames/Frame %ld.tiff", frameCount] stringByExpandingTildeInPath];
-     [[image TIFFRepresentation] writeToFile:file atomically:YES];
-     }
-     */
-    frameCount++;
+    supervision_exec_fast((int16*)videoBuffer,1);
 }
 
 - (BOOL)loadFileAtPath:(NSString *)path error:(NSError **)error
 {
-    // Zero out pad data
-    memset(pad, 0, sizeof(int16_t) * OESVButtonCount);
-
     romName = [path copy];
     if(romBuffer != NULL)
     {
