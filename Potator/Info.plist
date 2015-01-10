@@ -3,26 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>supervision</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.openemu.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>org.openemu.${PRODUCT_NAME:identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 OpenEmu Team. All rights reserved.</string>
+	<string>0.1</string>
 	<key>NSPrincipalClass</key>
+	<string>OEGameCoreController</string>
+	<key>OEGameCoreClass</key>
+	<string>SVGameCore</string>
+	<key>OEGameCorePlayerCount</key>
+	<string>1</string>
+	<key>OEProjectURL</key>
+	<string>http://potator.sourceforge.net</string>
+	<key>OESystemIdentifiers</key>
+	<array>
+		<string>openemu.system.sv</string>
+	</array>
+	<key>SUEnableAutomaticChecks</key>
+	<string>0</string>
+	<key>SUFeedURL</key>
 	<string></string>
 </dict>
 </plist>

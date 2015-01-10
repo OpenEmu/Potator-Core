@@ -17,7 +17,13 @@
 #include <nds/jtypes.h>
 #elif defined WIN
 #include <windows.h>
+#elif defined OPENEMU
+    #ifndef UINT32
+        #define UINT32 uint32_t
+    #endif
 #endif
+
+
 
 #ifdef NULL
 #undef NULL

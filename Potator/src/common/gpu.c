@@ -89,6 +89,12 @@ void gpu_reset(void)
 	supervision_palette[1] = RGB555(20,20,20);
 	supervision_palette[0] = RGB555(30,30,30);
 #endif
+#ifdef OPENEMU
+    supervision_palette[3] = RGB555(0,0,0);
+    supervision_palette[2] = RGB555(10,10,10);
+    supervision_palette[1] = RGB555(20,20,20);
+    supervision_palette[0] = RGB555(30,30,30);
+#endif
 
 	memset(gpu_regs, 0, 4);
 }
@@ -151,6 +157,12 @@ void gpu_set_colour_scheme(int colourScheme)
 	supervision_palette[2] = RGB555(10*redf,10*greenf,10*bluef);
 	supervision_palette[1] = RGB555(20*redf,20*greenf,20*bluef);
 	supervision_palette[0] = RGB555(30*redf,30*greenf,30*bluef);
+#endif
+#ifdef OPENEMU
+    supervision_palette[3] = RGB555(0*redf,0*greenf,0*bluef);
+    supervision_palette[2] = RGB555(10*redf,10*greenf,10*bluef);
+    supervision_palette[1] = RGB555(20*redf,20*greenf,20*bluef);
+    supervision_palette[0] = RGB555(30*redf,30*greenf,30*bluef);
 #endif
 }
 ////////////////////////////////////////////////////////////////////////////////

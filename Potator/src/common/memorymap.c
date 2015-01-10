@@ -11,6 +11,7 @@
 #include "sound.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 uint8	*memorymap_programRom;
 uint8	*memorymap_lowerRam;
@@ -46,7 +47,7 @@ uint8 *memorymap_getRomPointer(void)
 ////////////////////////////////////////////////////////////////////////////////
 void memorymap_init()
 {
-	//fprintf(log_get(), "memorymap: init\n");
+	fprintf(log_get(), "memorymap: init\n");
 	memory_malloc_secure((void**)&memorymap_lowerRam, 0x2000, "Lower ram");
 	memory_malloc_secure((void**)&memorymap_upperRam, 0x2000, "Upper ram");
 	memory_malloc_secure((void**)&memorymap_regs,     0x2000, "Internal registers");

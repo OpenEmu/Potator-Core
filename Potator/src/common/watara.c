@@ -152,9 +152,9 @@ void supervision_done(void)
 //
 //
 ////////////////////////////////////////////////////////////////////////////////
-void supervision_set_colour_scheme(int sv_colourScheme)
+void supervision_set_colour_scheme(COLOR_SCHEME ws_colourScheme)
 {
-	gpu_set_colour_scheme(sv_colourScheme);
+	gpu_set_colour_scheme(ws_colourScheme);
 }
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -207,6 +207,7 @@ void supervision_exec(int16 *backbuffer, BOOL bRender)
 		Run6502(&m6502_registers);
 #ifdef NDS
 		gpu_render_scanline(supervision_scanline, backbuffer);
+        printf("\n");
 		backbuffer += 160+96;
 #else
 		gpu_render_scanline(supervision_scanline, backbuffer);
@@ -215,7 +216,8 @@ void supervision_exec(int16 *backbuffer, BOOL bRender)
 	}
 
 	if (Rd6502(0x2026)&0x01)
-		Int6502(supervision_get6502regs(), INT_NMI);
+        Int6502(supervision_get6502regs(), INT_NMI);
+    printf("\n");
 }
 
 void supervision_exec2(int16 *backbuffer, BOOL bRender)
