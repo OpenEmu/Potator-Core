@@ -15,6 +15,7 @@
 #include "types.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #ifdef GP2X
 #include "menues.h"
@@ -1415,13 +1416,12 @@ void supervision_turnSound(BOOL bOn)
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-int	sv_loadState(char *statepath, int id)
+int	sv_loadState(const char *statepath, int id)
 {
 	FILE* fp;
 	char newPath[256];
 
 	strcpy(newPath,statepath);
-	sprintf(newPath+strlen(newPath)-3,".s%d",id);
 
 #ifdef GP2X
 	gp2x_printf(0,10,220,"newPath = %s",newPath);
@@ -1460,13 +1460,12 @@ int	sv_loadState(char *statepath, int id)
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-int	sv_saveState(char *statepath, int id)
+int	sv_saveState(const char *statepath, int id)
 {
 	FILE* fp;
 	char newPath[256];
 
 	strcpy(newPath,statepath);
-	sprintf(newPath+strlen(newPath)-3,".s%d",id);
 
 #ifdef GP2X
 	gp2x_printf(0,10,220,"newPath = %s",newPath);

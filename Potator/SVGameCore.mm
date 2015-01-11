@@ -264,18 +264,16 @@ static size_t audio_batch_callback(const int16_t *data, size_t frames)
 
 - (void)saveStateToFileAtPath:(NSString *)fileName completionHandler:(void (^)(BOOL, NSError *))block
 {
+    const char * path = [fileName cStringUsingEncoding:NSUTF8StringEncoding];
+    int success = sv_saveState(path, 0);
+    if(block) block(success==1, nil);
+
 }
 
 - (void)loadStateFromFileAtPath:(NSString *)fileName completionHandler:(void (^)(BOOL, NSError *))block
 {
+    const char * path = [fileName cStringUsingEncoding:NSUTF8StringEncoding];
+    int success = sv_loadState(path, 0);
+    if(block) block(success==1, nil);
 }
-
-#pragma mark - Cheats
-
-NSMutableDictionary *cheatList = [[NSMutableDictionary alloc] init];
-
-- (void)setCheat:(NSString *)code setType:(NSString *)type setEnabled:(BOOL)enabled
-{
-}
-
 @end

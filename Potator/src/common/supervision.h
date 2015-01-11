@@ -60,8 +60,8 @@ extern void supervision_set_colour_scheme(COLOR_SCHEME ws_colourScheme);
 extern M6502	*supervision_get6502regs(void);
 extern void supervision_turnSound(BOOL bOn);
 
-extern int	sv_loadState(char *statepath, int id);
-extern int	sv_saveState(char *statepath, int id);
+extern int	sv_loadState(const char *statepath, int id);
+extern int	sv_saveState(const char *statepath, int id);
 #endif
 
 #if defined __cplusplus
