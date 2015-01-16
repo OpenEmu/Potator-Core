@@ -31,8 +31,8 @@
 		<string>openemu.system.sv</string>
 	</array>
 	<key>SUEnableAutomaticChecks</key>
-	<string>0</string>
+	<string>1</string>
 	<key>SUFeedURL</key>
-	<string></string>
+	<string>https://raw.github.com/OpenEmu/OpenEmu-Update/master/potator_appcast.xml</string>
 </dict>
 </plist>
