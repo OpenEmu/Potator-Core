@@ -42,6 +42,8 @@
     size_t   romBufferSize;
 
     COLOR_SCHEME displayMode;
+
+    NSTimeInterval frameInterval;
 }
 
 @end
