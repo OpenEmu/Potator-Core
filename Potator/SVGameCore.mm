@@ -140,11 +140,6 @@ static __weak SVGameCore *_current;
 
 - (void)executeFrame
 {
-    [self executeFrameSkippingFrame:NO];
-}
-
-- (void)executeFrameSkippingFrame: (BOOL) skip
-{
     supervision_exec_fast((int16*)videoBuffer,1);
 }
 
