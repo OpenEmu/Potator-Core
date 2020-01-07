@@ -84,7 +84,7 @@
 		8379652B1A614E8900A8DE5C /* watara.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = watara.c; sourceTree = "<group>"; };
 		837965391A61543C00A8DE5C /* SVGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGameCore.h; sourceTree = "<group>"; };
 		8379653A1A61543C00A8DE5C /* SVGameCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SVGameCore.mm; sourceTree = "<group>"; };
-		8379653C1A6154B700A8DE5C /* OpenEmuBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEmuBase.framework; path = "../../../../Library/Developer/Xcode/DerivedData/OpenEmu-hfncqdfujfdqhvbjzbxihnkdstnj/Build/Products/Debug/OpenEmuBase.framework"; sourceTree = "<group>"; };
+		8379653C1A6154B700A8DE5C /* OpenEmuBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEmuBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8379653F1A6154D800A8DE5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		837965411A6154FD00A8DE5C /* OESVSystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OESVSystemResponderClient.h; path = ../../OpenEmu/Supervision/OESVSystemResponderClient.h; sourceTree = "<group>"; };
 		837965431A61608A00A8DE5C /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
@@ -235,7 +235,7 @@
 			};
 			buildConfigurationList = 837964FF1A614D9F00A8DE5C /* Build configuration list for PBXProject "Potator" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
