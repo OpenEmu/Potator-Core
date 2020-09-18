@@ -10,6 +10,7 @@
 #include "gpu.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #ifdef GP2X
 #include "minimal.h"
