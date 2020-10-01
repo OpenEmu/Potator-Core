@@ -38,7 +38,6 @@
 		8379653D1A6154B700A8DE5C /* OpenEmuBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8379653C1A6154B700A8DE5C /* OpenEmuBase.framework */; };
 		837965401A6154D800A8DE5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8379653F1A6154D800A8DE5C /* Cocoa.framework */; };
 		837965421A61570F00A8DE5C /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = 837965171A614E8900A8DE5C /* log.c */; };
-		837965441A61608A00A8DE5C /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 837965431A61608A00A8DE5C /* libstdc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +85,7 @@
 		8379653A1A61543C00A8DE5C /* SVGameCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SVGameCore.mm; sourceTree = "<group>"; };
 		8379653C1A6154B700A8DE5C /* OpenEmuBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEmuBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8379653F1A6154D800A8DE5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		837965411A6154FD00A8DE5C /* OESVSystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OESVSystemResponderClient.h; path = ../../OpenEmu/Supervision/OESVSystemResponderClient.h; sourceTree = "<group>"; };
-		837965431A61608A00A8DE5C /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		837965411A6154FD00A8DE5C /* OESVSystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OESVSystemResponderClient.h; path = ../../OpenEmu/SystemPlugins/Supervision/OESVSystemResponderClient.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837965441A61608A00A8DE5C /* libstdc++.dylib in Frameworks */,
 				837965401A6154D800A8DE5C /* Cocoa.framework in Frameworks */,
 				8379653D1A6154B700A8DE5C /* OpenEmuBase.framework in Frameworks */,
 			);
@@ -107,7 +104,6 @@
 		837964FB1A614D9F00A8DE5C = {
 			isa = PBXGroup;
 			children = (
-				837965431A61608A00A8DE5C /* libstdc++.dylib */,
 				837965061A614D9F00A8DE5C /* Potator */,
 				837965071A614D9F00A8DE5C /* Resources */,
 				8379653E1A6154BE00A8DE5C /* Frameworks & Libraries */,
